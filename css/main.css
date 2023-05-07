@@ -343,6 +343,10 @@ section {
   color: var(--mono-1);
 }
 
+#footer a {
+  text-decoration: none;
+}
+
 #footer #socials {
   display: flex;
   justify-content: center;
@@ -351,18 +355,15 @@ section {
 }
 
 #footer #socials a {
-  color: var(--mono-1);
+  font-size: 3rem;
   margin: 1rem;
   line-height: 1;
+  color: var(--mono-1);
   transition: transform 0.15s ease-in-out;
 }
 
 #footer #socials a:hover {
-  transform: scale(1.1);
-}
-
-#footer #socials a svg {
-  height: 3rem;
+  transform: scale(1.2);
 }
 
 #footer #info {
@@ -371,17 +372,12 @@ section {
   margin-top: 25px;
 }
 
-#footer #info a {
-  text-decoration: none;
-}
-
 #scroller {
   display: flex;
   flex-direction: column;
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  margin: 1rem;
   overflow: hidden;
   cursor: pointer;
 }
@@ -394,24 +390,19 @@ section {
 
 #scroll-up,
 #scroll-down {
+  font-size: 2.5rem;
+  padding: 1.25rem 1rem;
   line-height: 1;
+  color: var(--mono-1);
+  -webkit-text-stroke: 0.15rem var(--base);
+  text-shadow: -1px -1px 0 var(--base), 1px -1px 0 var(--base),
+    -1px 1px 0 var(--base), 1px 1px 0 var(--base);
   transition: transform 0.15s ease-in-out;
 }
 
 #scroll-up:hover,
 #scroll-down:hover {
   transform: scale(1.2);
-}
-
-#scroller svg {
-  width: 5rem;
-  height: 5rem;
-}
-
-#scroller path {
-  color: var(--mono-1);
-  stroke: var(--base);
-  stroke-width: 1rem;
 }
 
 #modals {
