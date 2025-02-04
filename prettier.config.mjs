@@ -3,7 +3,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
-  plugins: ["prettier-plugin-astro"],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: "*.astro",
