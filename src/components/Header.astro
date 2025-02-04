@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+import profile from "@/images/profile.png";
+---
+
+<header class="container flex items-center justify-between py-2">
+  <a href="/" class="flex items-center gap-3 font-semibold">
+    <Image src={profile} alt="profile" class="size-7 rounded-md" />
+    <span class="sr-only sm:not-sr-only">Aakash Kc</span>
+  </a>
+  <nav class="flex items-center gap-3 font-medium">
+    <a href="/projects" class="p-2">Projects</a>
+    <a href="/blog" class="p-2">Blog</a>
+  </nav>
+</header>
