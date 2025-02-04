@@ -1,8 +1,11 @@
 ---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
 
-import "../styles/global.css";
+import "@/styles/global.css";
 ---
 
 <!doctype html>
@@ -14,7 +17,11 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Aakash Kc</title>
   </head>
-  <body>
-    <slot />
+  <body class="flex min-h-screen flex-col gap-10">
+    <Header />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
