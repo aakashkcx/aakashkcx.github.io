@@ -1,0 +1,2 @@
+- [ ] Add landing page
+- [ ] Add dark mode - https://tailwindcss.com/docs/dark-mode
