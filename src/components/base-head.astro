@@ -1,0 +1,17 @@
+---
+type Props = { title: string; author: string; description: string };
+
+const { title, author, description } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="icon" type="image/svg+xml" href="/blog/favicon.svg" />
+
+<title>{title}</title>
+
+<meta name="title" content={title} />
+<meta name="author" content={author} />
+<meta name="description" content={description} />
