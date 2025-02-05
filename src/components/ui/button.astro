@@ -17,7 +17,7 @@ const {
   ...props
 } = Astro.props;
 
-const Comp = asLink ? "a" : "div";
+const Comp = asLink ? "a" : "button";
 ---
 
 <Comp class={cn(buttonVariants({ variant, size }), className)} {...props}>
