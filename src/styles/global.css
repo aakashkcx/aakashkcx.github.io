@@ -34,9 +34,6 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
 }
 
 @utility container {
@@ -44,55 +41,57 @@
   padding-inline: 2rem;
 }
 
-:root {
-  --background: var(--color-white);
-  --foreground: var(--color-neutral-950);
-  --card: var(--color-white);
-  --card-foreground: var(--color-neutral-950);
-  --popover: var(--color-white);
-  --popover-foreground: var(--color-neutral-950);
-  --primary: var(--color-neutral-900);
-  --primary-foreground: var(--color-neutral-50);
-  --secondary: var(--color-neutral-100);
-  --secondary-foreground: var(--color-neutral-900);
-  --muted: var(--color-neutral-100);
-  --muted-foreground: var(--color-neutral-500);
-  --accent: var(--color-neutral-100);
-  --accent-foreground: var(--color-neutral-900);
-  --destructive: var(--color-red-500);
-  --destructive-foreground: var(--color-neutral-50);
-  --border: var(--color-neutral-200);
-  --input: var(--color-neutral-200);
-  --ring: var(--color-neutral-950);
-  --radius: 0.5rem;
+@layer base {
+  :root {
+    --background: var(--color-white);
+    --foreground: var(--color-neutral-950);
+    --card: var(--color-white);
+    --card-foreground: var(--color-neutral-950);
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-neutral-950);
+    --primary: var(--color-neutral-900);
+    --primary-foreground: var(--color-neutral-50);
+    --secondary: var(--color-neutral-100);
+    --secondary-foreground: var(--color-neutral-900);
+    --muted: var(--color-neutral-100);
+    --muted-foreground: var(--color-neutral-500);
+    --accent: var(--color-neutral-100);
+    --accent-foreground: var(--color-neutral-900);
+    --destructive: var(--color-red-500);
+    --destructive-foreground: var(--color-neutral-50);
+    --border: var(--color-neutral-200);
+    --input: var(--color-neutral-200);
+    --ring: var(--color-neutral-950);
+  }
+
+  .dark {
+    --background: var(--color-neutral-950);
+    --foreground: var(--color-neutral-50);
+    --card: var(--color-neutral-950);
+    --card-foreground: var(--color-neutral-50);
+    --popover: var(--color-neutral-950);
+    --popover-foreground: var(--color-neutral-50);
+    --primary: var(--color-neutral-50);
+    --primary-foreground: var(--color-neutral-900);
+    --secondary: var(--color-neutral-800);
+    --secondary-foreground: var(--color-neutral-50);
+    --muted: var(--color-neutral-800);
+    --muted-foreground: var(--color-neutral-400);
+    --accent: var(--color-neutral-800);
+    --accent-foreground: var(--color-neutral-50);
+    --destructive: var(--color-red-900);
+    --destructive-foreground: var(--color-neutral-50);
+    --border: var(--color-neutral-800);
+    --input: var(--color-neutral-800);
+    --ring: var(--color-neutral-300);
+  }
 }
 
-.dark {
-  --background: var(--color-neutral-950);
-  --foreground: var(--color-neutral-50);
-  --card: var(--color-neutral-950);
-  --card-foreground: var(--color-neutral-50);
-  --popover: var(--color-neutral-950);
-  --popover-foreground: var(--color-neutral-50);
-  --primary: var(--color-neutral-50);
-  --primary-foreground: var(--color-neutral-900);
-  --secondary: var(--color-neutral-800);
-  --secondary-foreground: var(--color-neutral-50);
-  --muted: var(--color-neutral-800);
-  --muted-foreground: var(--color-neutral-400);
-  --accent: var(--color-neutral-800);
-  --accent-foreground: var(--color-neutral-50);
-  --destructive: var(--color-red-900);
-  --destructive-foreground: var(--color-neutral-50);
-  --border: var(--color-neutral-800);
-  --input: var(--color-neutral-800);
-  --ring: var(--color-neutral-300);
-}
-
-* {
-  @apply border-border;
-}
-
-body {
-  @apply bg-background text-foreground font-sans antialiased;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
 }
