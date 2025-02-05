@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
+import ThemeScript from "@/components/ThemeScript.astro";
 
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
@@ -16,6 +17,7 @@ import "@/styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Aakash Kc</title>
+    <ThemeScript />
   </head>
   <body class="flex min-h-screen flex-col gap-10">
     <Header />
