@@ -19,7 +19,8 @@ const pageTitle = title ? `${title} - ${baseTitle}` : baseTitle;
 const defaultAuthor = "Aakash Kc";
 const pageAuthor = author || defaultAuthor;
 
-const defaultDescription = "Aakash Kc";
+const defaultDescription =
+  "Hi there, I'm Aakash! Welcome to my personal website!";
 const pageDescription = description || defaultDescription;
 ---
 
@@ -35,9 +36,7 @@ const pageDescription = description || defaultDescription;
   </head>
   <body class="flex min-h-screen flex-col gap-10">
     <Header />
-    <main class="container">
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </body>
 </html>

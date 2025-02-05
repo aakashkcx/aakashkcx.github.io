@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@/layouts/base-layout.astro";
+
+type Props = { title?: string; author?: string; description?: string };
+
+const { ...props } = Astro.props;
+---
+
+<BaseLayout {...props}>
+  <main class="container flex flex-col gap-10">
+    <slot />
+  </main>
+</BaseLayout>
