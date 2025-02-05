@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Github } from "lucide-react";
 
 import profile from "@/images/profile.png";
 ---
@@ -12,5 +13,8 @@ import profile from "@/images/profile.png";
   <nav class="flex items-center gap-3 font-medium">
     <a href="/projects" class="p-2">Projects</a>
     <a href="/blog" class="p-2">Blog</a>
+    <a href="https://github.com/aakashkcx" class="px-3 py-2">
+      <Github className="size-5" />
+    </a>
   </nav>
 </header>
