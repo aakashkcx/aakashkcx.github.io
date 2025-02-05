@@ -1,7 +1,8 @@
 import { Computer, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "system" | "dark">("system");
@@ -28,24 +29,43 @@ export function ThemeToggle() {
   }, [theme]);
 
   return (
-    <ToggleGroup
-      type="single"
-      variant="outline"
-      size="sm"
-      value={theme}
-      onValueChange={(value: "light" | "system" | "dark") => {
-        if (value) setTheme(value);
-      }}
-    >
-      <ToggleGroupItem value="light" aria-label="Light theme">
-        <Sun className="size-4" />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="system" aria-label="System theme">
-        <Computer className="size-4" />
-      </ToggleGroupItem>
-      <ToggleGroupItem value="dark" aria-label="Dark theme">
-        <Moon className="size-4" />
-      </ToggleGroupItem>
-    </ToggleGroup>
+    <div className="rounded-full border">
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-label="Light theme"
+        className={cn(
+          "rounded-full",
+          theme === "light" && "bg-accent text-accent-foreground border",
+        )}
+        onClick={() => setTheme("light")}
+      >
+        <Sun />
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-label="System theme"
+        className={cn(
+          "rounded-full",
+          theme === "system" && "bg-accent text-accent-foreground border",
+        )}
+        onClick={() => setTheme("system")}
+      >
+        <Computer />
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-label="Dark theme"
+        className={cn(
+          "rounded-full",
+          theme === "dark" && "bg-accent text-accent-foreground border",
+        )}
+        onClick={() => setTheme("dark")}
+      >
+        <Moon />
+      </Button>
+    </div>
   );
 }
