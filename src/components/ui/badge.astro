@@ -1,0 +1,25 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import type { VariantProps } from "class-variance-authority";
+
+import { badgeVariants } from "@/components/ui/badge.tsx";
+import { cn } from "@/lib/utils";
+
+type Props = HTMLAttributes<"div"> &
+  HTMLAttributes<"a"> &
+  VariantProps<typeof badgeVariants> & { asLink?: boolean };
+
+const {
+  class: className,
+  variant,
+  size,
+  asLink = false,
+  ...props
+} = Astro.props;
+
+const Comp = asLink ? "a" : "div";
+---
+
+<Comp class={cn(badgeVariants({ variant, size }), className)} {...props}>
+  <slot />
+</Comp>
