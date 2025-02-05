@@ -1,11 +1,33 @@
 ---
-import Layout from "@/layouts/layout.astro";
+import { Image } from "astro:assets";
+import { Github, Linkedin } from "lucide-react";
+
+import Button from "@/components/ui/button.astro";
+import BaseLayout from "@/layouts/base-layout.astro";
+
+import headshot from "@/images/headshot.jpg";
 ---
 
-<Layout>
-  <h1 class="text-4xl font-semibold tracking-tight">Aakash Kc</h1>
-  <p>This is a work in progress. Check back soon for updates!</p>
-  <p>
-    <a href="https://aakashkcx.github.io/old-site/">View my old site here</a>
-  </p>
-</Layout>
+<BaseLayout>
+  <main class="flex grow items-center justify-center">
+    <section class="container flex flex-row items-center justify-between">
+      <div class="flex flex-col gap-5">
+        <h1 class="text-8xl font-semibold tracking-tight">Aakash Kc</h1>
+        <p class="text-lg font-medium">
+          This is a work in progress. Check back soon for updates!
+        </p>
+        <div class="flex flex-row gap-5">
+          <Button asLink href="/projects">Projects</Button>
+          <Button asLink href="/blog">Blog</Button>
+          <Button asLink href="https://github.com/aakashkcx">
+            <Github /> Github
+          </Button>
+          <Button asLink href="https://www.linkedin.com/in/aakashkc/">
+            <Linkedin /> LinkedIn
+          </Button>
+        </div>
+      </div>
+      <Image src={headshot} alt="profile" class="size-100 rounded-full" />
+    </section>
+  </main>
+</BaseLayout>
