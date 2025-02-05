@@ -1,0 +1,20 @@
+<script is:inline>
+  function getTheme() {
+    const localStorageTheme = localStorage?.getItem("theme");
+    if (localStorageTheme) return localStorageTheme;
+    const mediaDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    return mediaDarkTheme.matches ? "dark" : "light";
+  }
+
+  document.documentElement.classList.toggle("dark", getTheme() === "dark");
+
+  // // Whenever the user explicitly chooses light mode
+  // localStorage?.setItem("theme", "light");
+  // document.documentElement.classList.remove("dark");
+  // // Whenever the user explicitly chooses dark mode
+  // localStorage?.setItem("theme", "dark");
+  // document.documentElement.classList.add("dark");
+  // // Whenever the user explicitly chooses to respect the OS preference
+  // localStorage?.removeItem("theme");
+  // document.documentElement.classList.toggle("dark", getTheme() === "dark");
+</script>
