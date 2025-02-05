@@ -39,6 +39,7 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
+  max-width: var(--container-6xl);
 }
 
 @layer base {
