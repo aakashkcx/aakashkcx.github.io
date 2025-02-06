@@ -1,0 +1,26 @@
+---
+import Footer from "@/components/footer.astro";
+import HeaderPortfolio from "@/components/header-portfolio.astro";
+import BaseLayout from "./base-layout.astro";
+
+type Props = {
+  title?: string;
+  author?: string;
+  description?: string;
+};
+
+const { title, author, description } = Astro.props;
+---
+
+<BaseLayout
+  section="Portfolio"
+  title={title}
+  author={author}
+  description={description}
+>
+  <HeaderPortfolio />
+  <main class="container flex max-w-3xl grow flex-col gap-10">
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>

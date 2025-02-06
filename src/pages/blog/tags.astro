@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+
+import Badge from "@/components/ui/badge.astro";
+import LayoutBlog from "@/layouts/layout-blog.astro";
+
+const posts = (await getCollection("posts"))
+  .filter((post) => post.data.published)
+  .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf());
+
+const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)));
+
+const tagCounts = tags
+  .map((tag) => ({
+    tag,
+    count: posts.filter((post) => post.data.tags.includes(tag)).length,
+  }))
+  .toSorted((a, b) => b.count - a.count);
+---
+
+<LayoutBlog title="Tags">
+  <h1 class="text-4xl font-semibold tracking-tight">Tags</h1>
+  <section class="flex flex-col gap-10">
+    {
+      tagCounts.map((tc) => (
+        <a
+          href={`/blog/tag/${tc.tag}`}
+          class="group flex flex-col items-start gap-3"
+        >
+          <Badge size="lg">{tc.tag}</Badge>
+          <p class="text-muted-foreground group-hover:text-foreground transition-colors">
+            {tc.count} {tc.count > 1 ? "Posts" : "Post"}
+          </p>
+        </a>
+      ))
+    }
+  </section>
+</LayoutBlog>

@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+import Prose from "@/components/prose.astro";
+import Badge from "@/components/ui/badge.astro";
+import LayoutBlog from "@/layouts/layout-blog.astro";
+
+export async function getStaticPaths() {
+  return (await getCollection("posts")).map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await render(post);
+---
+
+<LayoutBlog title={post.data.title} description={post.data.description}>
+  <h1 class="text-4xl font-semibold tracking-tight">{post.data.title}</h1>
+  {
+    post.data.image && (
+      <Image
+        src={post.data.image}
+        alt={post.data.description}
+        class="mx-auto max-h-100 w-fit rounded-xl"
+      />
+    )
+  }
+  <section class="flex flex-col gap-5">
+    <div class="text-muted-foreground flex flex-row justify-between">
+      <span>Published {post.data.created.toLocaleString()}</span>
+      {
+        post.data.updated && (
+          <span>Updated {post.data.updated.toLocaleString()}</span>
+        )
+      }
+    </div>
+    <div class="flex gap-3">
+      {
+        post.data.tags.map((tag) => (
+          <Badge asLink href={`/blog/tag/${tag}`} size="lg">
+            {tag}
+          </Badge>
+        ))
+      }
+    </div>
+  </section>
+  <Prose>
+    <Content />
+  </Prose>
+</LayoutBlog>

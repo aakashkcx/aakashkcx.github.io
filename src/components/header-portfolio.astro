@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { Github } from "lucide-react";
+
+import profile from "@/images/profile.png";
+import { cn } from "@/lib/utils";
+
+const { pathname } = Astro.url;
+---
+
+<header class="container flex flex-row items-center justify-between py-2">
+  <div class="flex flex-row items-center gap-3 font-semibold sm:gap-1">
+    <a href="/" class="flex flex-row items-center gap-3">
+      <Image src={profile} alt="profile" class="size-7 rounded-md" />
+      <span class="sr-only sm:not-sr-only">Aakash Kc</span>
+    </a>
+    <span class="sr-only sm:not-sr-only">/</span>
+    <a href="/portfolio">Portfolio</a>
+  </div>
+
+  <nav class="flex flex-row items-center gap-3 font-medium">
+    <a
+      href="/portfolio/projects"
+      class={cn(
+        "p-2 transition-colors hover:text-primary",
+        pathname.includes("/portfolio/projects")
+          ? "text-primary"
+          : "text-muted-foreground"
+      )}>Projects</a
+    >
+    <a
+      href="/portfolio/tags"
+      class={cn(
+        "p-2 transition-colors hover:text-primary",
+        pathname.includes("/portfolio/tags")
+          ? "text-primary"
+          : "text-muted-foreground"
+      )}>Tags</a
+    >
+    <a
+      href="https://github.com/aakashkcx"
+      class="text-muted-foreground hover:text-primary p-2 transition-colors"
+      ><Github className="size-5" /></a
+    >
+  </nav>
+</header>

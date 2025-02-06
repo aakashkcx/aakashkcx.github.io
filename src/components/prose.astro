@@ -1,0 +1,16 @@
+---
+import { cn } from "@/lib/utils";
+---
+
+<article
+  class={cn(
+    "prose prose-neutral dark:prose-invert",
+    "prose-headings:font-semibold prose-headings:tracking-tight",
+    "prose-h1:text4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base",
+    "prose-img:rounded-xl",
+    "prose-code:font-semibold",
+    "max-w-none"
+  )}
+>
+  <slot />
+</article>

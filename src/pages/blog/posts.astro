@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+
+import Badge from "@/components/ui/badge.astro";
+import LayoutBlog from "@/layouts/layout-blog.astro";
+
+const posts = (await getCollection("posts"))
+  .filter((post) => post.data.published)
+  .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf());
+---
+
+<LayoutBlog title="Posts">
+  <h1 class="text-4xl font-semibold tracking-tight">Posts</h1>
+  <section class="flex flex-col gap-10">
+    {
+      posts.map((post) => (
+        <a href={`/blog/post/${post.id}`} class="group flex flex-col gap-3">
+          <h4 class="text-xl font-semibold tracking-tight">
+            {post.data.title}
+          </h4>
+          <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
+            {post.data.description}
+          </p>
+          <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+            {post.data.created.toLocaleDateString()}
+          </p>
+          <div class="flex gap-3">
+            {post.data.tags.map((tag) => (
+              <Badge class="bg-muted-foreground group-hover:bg-primary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </section>
+</LayoutBlog>
