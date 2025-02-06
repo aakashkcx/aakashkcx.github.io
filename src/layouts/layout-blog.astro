@@ -22,6 +22,8 @@ const pageDescription = description || defaultDescription;
   description={pageDescription}
 >
   <HeaderBlog />
-  <slot />
+  <main class="container flex grow flex-col gap-10">
+    <slot />
+  </main>
   <Footer />
 </BaseLayout>
