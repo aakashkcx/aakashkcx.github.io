@@ -19,7 +19,7 @@ const { title, author, description } = Astro.props;
   description={description}
 >
   <HeaderPortfolio />
-  <main class="container flex grow flex-col gap-10">
+  <main class="container flex max-w-3xl grow flex-col gap-10">
     <slot />
   </main>
   <Footer />
