@@ -10,13 +10,15 @@ import headshot from "@/images/headshot.jpg";
 
 <Layout>
   <main class="flex grow items-center justify-center">
-    <section class="container flex flex-row items-center justify-between">
+    <section
+      class="container flex flex-col-reverse items-center justify-between gap-5 text-center lg:flex-row lg:text-left"
+    >
       <div class="flex flex-col gap-5">
         <h1 class="text-8xl font-semibold tracking-tight">Aakash Kc</h1>
         <p class="text-lg font-medium">
           This is a work in progress. Check back soon for updates!
         </p>
-        <div class="flex flex-row gap-5">
+        <div class="flex flex-row justify-evenly gap-5 lg:justify-start">
           <Button asLink href="/portfolio">Portfolio</Button>
           <Button asLink href="/blog">Blog</Button>
           <Button asLink href="https://github.com/aakashkcx">
