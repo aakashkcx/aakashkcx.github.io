@@ -14,12 +14,14 @@ import headshot from "@/images/headshot.jpg";
       class="container flex flex-col-reverse items-center justify-between gap-5 text-center lg:flex-row lg:text-left"
     >
       <div class="flex flex-col gap-5">
-        <h1 class="text-8xl font-semibold tracking-tight">Aakash Kc</h1>
+        <h1 class="text-6xl font-semibold tracking-tight sm:text-8xl">
+          Aakash Kc
+        </h1>
         <p class="text-lg font-medium">
           This is a work in progress. Check back soon for updates!
         </p>
         <div
-          class="flex flex-row flex-wrap justify-evenly gap-5 lg:justify-start"
+          class="flex flex-row flex-wrap justify-center gap-5 lg:justify-start"
         >
           <Button asLink href="/portfolio">Portfolio</Button>
           <Button asLink href="/blog">Blog</Button>
@@ -31,7 +33,11 @@ import headshot from "@/images/headshot.jpg";
           </Button>
         </div>
       </div>
-      <Image src={headshot} alt="profile" class="size-100 rounded-full" />
+      <Image
+        src={headshot}
+        alt="Headshot of Aakash Kc"
+        class="aspect-square size-100 h-auto max-w-full rounded-full"
+      />
     </section>
   </main>
 </Layout>
