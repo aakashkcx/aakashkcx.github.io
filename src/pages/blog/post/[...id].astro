@@ -19,7 +19,9 @@ const { Content } = await render(post);
 ---
 
 <LayoutBlog title={post.data.title} description={post.data.description}>
-  <h1 class="text-4xl font-semibold tracking-tight">{post.data.title}</h1>
+  <h1 class="text-center text-4xl font-semibold tracking-tight sm:text-left">
+    {post.data.title}
+  </h1>
   {
     post.data.image && (
       <Image
@@ -30,7 +32,9 @@ const { Content } = await render(post);
     )
   }
   <section class="flex flex-col gap-5">
-    <div class="text-muted-foreground flex flex-row justify-between">
+    <div
+      class="text-muted-foreground flex flex-col justify-between gap-3 sm:flex-row"
+    >
       <span>Published {post.data.created.toLocaleString()}</span>
       {
         post.data.updated && (
@@ -38,7 +42,7 @@ const { Content } = await render(post);
         )
       }
     </div>
-    <div class="flex gap-3">
+    <div class="flex flex-wrap gap-3">
       {
         post.data.tags.map((tag) => (
           <Badge asLink href={`/blog/tag/${tag}`} size="lg">
