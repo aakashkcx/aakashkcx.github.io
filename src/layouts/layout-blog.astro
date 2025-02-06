@@ -1,0 +1,27 @@
+---
+import Footer from "@/components/footer.astro";
+import HeaderBlog from "@/components/header-blog.astro";
+import BaseLayout from "./base-layout.astro";
+
+type Props = {
+  title?: string;
+  author?: string;
+  description?: string;
+};
+
+const { title, author, description } = Astro.props;
+
+const defaultDescription = "Hi there, I'm Aakash! Welcome to my blog!";
+const pageDescription = description || defaultDescription;
+---
+
+<BaseLayout
+  section="Blog"
+  title={title}
+  author={author}
+  description={pageDescription}
+>
+  <HeaderBlog />
+  <slot />
+  <Footer />
+</BaseLayout>

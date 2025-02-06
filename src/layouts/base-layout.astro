@@ -1,7 +1,5 @@
 ---
 import BaseHead from "@/components/base-head.astro";
-import Footer from "@/components/footer.astro";
-import Header from "@/components/header.astro";
 import ThemeScript from "@/components/theme-script.astro";
 
 import "@fontsource-variable/geist";
@@ -9,12 +7,18 @@ import "@fontsource-variable/geist-mono";
 
 import "@/styles/global.css";
 
-type Props = { title?: string; author?: string; description?: string };
+type Props = {
+  section?: string;
+  title?: string;
+  author?: string;
+  description?: string;
+};
 
-const { title, author, description } = Astro.props;
+const { section, title, author, description } = Astro.props;
 
 const baseTitle = "Aakash Kc";
-const pageTitle = title ? `${title} - ${baseTitle}` : baseTitle;
+const sectionTitle = section ? `${baseTitle} / ${section}` : baseTitle;
+const pageTitle = title ? `${title} - ${sectionTitle}` : sectionTitle;
 
 const defaultAuthor = "Aakash Kc";
 const pageAuthor = author || defaultAuthor;
@@ -35,8 +39,6 @@ const pageDescription = description || defaultDescription;
     <ThemeScript />
   </head>
   <body class="flex min-h-screen flex-col gap-10">
-    <Header />
     <slot />
-    <Footer />
   </body>
 </html>

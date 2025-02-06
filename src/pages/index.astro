@@ -3,12 +3,12 @@ import { Image } from "astro:assets";
 import { Github, Linkedin } from "lucide-react";
 
 import Button from "@/components/ui/button.astro";
-import BaseLayout from "@/layouts/base-layout.astro";
+import Layout from "@/layouts/layout.astro";
 
 import headshot from "@/images/headshot.jpg";
 ---
 
-<BaseLayout>
+<Layout>
   <main class="flex grow items-center justify-center">
     <section class="container flex flex-row items-center justify-between">
       <div class="flex flex-col gap-5">
@@ -17,7 +17,7 @@ import headshot from "@/images/headshot.jpg";
           This is a work in progress. Check back soon for updates!
         </p>
         <div class="flex flex-row gap-5">
-          <Button asLink href="/projects">Projects</Button>
+          <Button asLink href="/portfolio">Portfolio</Button>
           <Button asLink href="/blog">Blog</Button>
           <Button asLink href="https://github.com/aakashkcx">
             <Github /> Github
@@ -30,4 +30,4 @@ import headshot from "@/images/headshot.jpg";
       <Image src={headshot} alt="profile" class="size-100 rounded-full" />
     </section>
   </main>
-</BaseLayout>
+</Layout>

@@ -1,6 +1,6 @@
 ---
 import Footer from "@/components/footer.astro";
-import Header from "@/components/header.astro";
+import HeaderPortfolio from "@/components/header-portfolio.astro";
 import BaseLayout from "./base-layout.astro";
 
 type Props = {
@@ -12,8 +12,13 @@ type Props = {
 const { title, author, description } = Astro.props;
 ---
 
-<BaseLayout title={title} author={author} description={description}>
-  <Header />
+<BaseLayout
+  section="Portfolio"
+  title={title}
+  author={author}
+  description={description}
+>
+  <HeaderPortfolio />
   <slot />
   <Footer />
 </BaseLayout>
