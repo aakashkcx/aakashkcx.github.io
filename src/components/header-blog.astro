@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import { Github } from "lucide-react";
 
 import profile from "@/images/profile.png";
+import { cn } from "@/lib/utils";
+
+const { pathname } = Astro.url;
 ---
 
 <header class="container flex flex-row items-center justify-between py-2">
@@ -16,10 +19,28 @@ import profile from "@/images/profile.png";
   </div>
 
   <nav class="flex flex-row items-center gap-3 font-medium">
-    <a href="/blog/posts" class="p-2">Posts</a>
-    <a href="/blog/tags" class="p-2">Tags</a>
-    <a href="https://github.com/aakashkcx" class="p-2">
-      <Github className="size-5" />
-    </a>
+    <a
+      href="/blog/posts"
+      class={cn(
+        "p-2 transition-colors hover:text-primary",
+        pathname.includes("/blog/posts")
+          ? "text-primary"
+          : "text-muted-foreground"
+      )}>Posts</a
+    >
+    <a
+      href="/blog/tags"
+      class={cn(
+        "p-2 transition-colors hover:text-primary",
+        pathname.includes("/blog/tags")
+          ? "text-primary"
+          : "text-muted-foreground"
+      )}>Tags</a
+    >
+    <a
+      href="https://github.com/aakashkcx"
+      class="text-muted-foreground hover:text-primary p-2 transition-colors"
+      ><Github className="size-5" /></a
+    >
   </nav>
 </header>
