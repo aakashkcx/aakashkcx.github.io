@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-import Badge from "@/components/ui/badge.astro";
+import { Badge } from "@/components/ui/badge";
 import LayoutBlog from "@/layouts/layout-blog.astro";
 
 export async function getStaticPaths() {
@@ -22,7 +22,7 @@ const title = `Tag: ${tag}`;
 <LayoutBlog title={title}>
   <header class="flex flex-row items-center gap-3 font-semibold">
     <h1 class="text-4xl tracking-tight">Tag:</h1>
-    <Badge size="lg" class="px-4 text-3xl">{tag}</Badge>
+    <Badge size="lg" className="px-4 text-3xl">{tag}</Badge>
   </header>
   <section class="flex flex-col gap-10">
     {
@@ -39,7 +39,7 @@ const title = `Tag: ${tag}`;
           </p>
           <div class="flex gap-3">
             {post.data.tags.map((tag) => (
-              <Badge class="bg-muted-foreground group-hover:bg-primary">
+              <Badge className="bg-muted-foreground group-hover:bg-primary">
                 {tag}
               </Badge>
             ))}

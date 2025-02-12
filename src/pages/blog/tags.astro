@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-import Badge from "@/components/ui/badge.astro";
+import { Badge } from "@/components/ui/badge";
 import LayoutBlog from "@/layouts/layout-blog.astro";
 
 const posts = (await getCollection("posts"))

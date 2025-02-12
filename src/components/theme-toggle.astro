@@ -1,14 +1,14 @@
 ---
 import { Computer, Moon, Sun } from "lucide-react";
 
-import Button from "@/components/ui/button.astro";
+import { Button } from "@/components/ui/button";
 ---
 
 <div class="flex flex-row rounded-full border">
   <Button
     variant="ghost"
     size="icon"
-    class="rounded-full transition-colors"
+    className="rounded-full transition-colors"
     data-theme-button="light"
     aria-label="Light theme"
   >
@@ -17,7 +17,7 @@ import Button from "@/components/ui/button.astro";
   <Button
     variant="ghost"
     size="icon"
-    class="rounded-full transition-colors"
+    className="rounded-full transition-colors"
     data-theme-button="system"
     aria-label="System theme"
   >
@@ -26,7 +26,7 @@ import Button from "@/components/ui/button.astro";
   <Button
     variant="ghost"
     size="icon"
-    class="rounded-full transition-colors"
+    className="rounded-full transition-colors"
     data-theme-button="dark"
     aria-label="Dark theme"
   >

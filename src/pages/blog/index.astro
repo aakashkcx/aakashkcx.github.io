@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import Badge from "@/components/ui/badge.astro";
-import Button from "@/components/ui/button.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import LayoutBlog from "@/layouts/layout-blog.astro";
 
 const newestPosts = (await getCollection("posts"))
@@ -36,7 +36,7 @@ const newestPosts = (await getCollection("posts"))
             </p>
             <div class="flex gap-3">
               {post.data.tags.map((tag) => (
-                <Badge class="bg-muted-foreground group-hover:bg-primary">
+                <Badge className="bg-muted-foreground group-hover:bg-primary">
                   {tag}
                 </Badge>
               ))}
