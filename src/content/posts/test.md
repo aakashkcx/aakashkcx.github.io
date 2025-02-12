@@ -4,7 +4,7 @@ description: Testing Astro markdown collections
 published: true
 created: 2025-01-01 00:00:00
 updated: 2025-01-01 00:00:00
-image: "@/images/profile.png"
+image: "@/assets/images/profile.png"
 tags:
   - test
   - tag
@@ -78,4 +78,4 @@ console.log("Code Block");
 
 [Link](https://github.com/aakashkcx/blog)
 
-![Alt Text](@/images/profile.png)
+![Alt Text](@/assets/images/profile.png)

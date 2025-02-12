@@ -3,7 +3,7 @@ title: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, hic
 description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius explicabo fuga eveniet optio, perspiciatis, odio aut ex earum quisquam eaque totam inventore quod cupiditate recusandae! Provident numquam, fugit iusto dolorum tempora nesciunt deleniti commodi aut dicta quisquam ipsa ea ratione magnam, eos recusandae incidunt beatae minima minus sequi officiis et?
 published: true
 created: 2025-01-01 00:00:00
-image: "@/images/profile.png"
+image: "@/assets/images/profile.png"
 tags:
   - test
   - astro
@@ -77,4 +77,4 @@ console.log("Code Block");
 
 [Link](https://github.com/aakashkcx/blog)
 
-![Alt Text](@/images/profile.png)
+![Alt Text](@/assets/images/profile.png)
