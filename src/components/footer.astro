@@ -1,5 +1,5 @@
 ---
-import { ThemeToggle } from "@/components/theme-toggle";
+import ThemeToggle from "@/components/theme-toggle.astro";
 ---
 
 <footer class="mt-auto border-t py-4">
@@ -7,6 +7,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
     class="xs:flex-row container flex flex-col-reverse items-center justify-between gap-5"
   >
     <div>Built by Aakash Kc</div>
-    <ThemeToggle client:load />
+    <ThemeToggle />
   </div>
 </footer>

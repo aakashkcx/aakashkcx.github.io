@@ -1,0 +1,75 @@
+---
+import { Computer, Moon, Sun } from "lucide-react";
+
+import Button from "@/components/ui/button.astro";
+---
+
+<div class="flex flex-row rounded-full border">
+  <Button
+    variant="ghost"
+    size="icon"
+    class="rounded-full transition-colors"
+    data-theme-button="light"
+    aria-label="Light theme"
+  >
+    <Sun />
+  </Button>
+  <Button
+    variant="ghost"
+    size="icon"
+    class="rounded-full transition-colors"
+    data-theme-button="system"
+    aria-label="System theme"
+  >
+    <Computer />
+  </Button>
+  <Button
+    variant="ghost"
+    size="icon"
+    class="rounded-full transition-colors"
+    data-theme-button="dark"
+    aria-label="Dark theme"
+  >
+    <Moon />
+  </Button>
+</div>
+
+<script is:inline>
+  const activeThemeClasses = ["bg-accent", "text-accent-foreground", "border"];
+
+  const theme = localStorage?.getItem("theme") ?? "system";
+
+  document
+    .querySelectorAll(`[data-theme-button=${theme}]`)
+    .forEach((element) => element.classList.add(...activeThemeClasses));
+
+  document
+    .querySelectorAll("[data-theme-button]")
+    .forEach((element) =>
+      element.addEventListener("click", (event) =>
+        setTheme(event.target.dataset.themeButton)
+      )
+    );
+
+  function setTheme(theme) {
+    if (theme === "light") {
+      localStorage?.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+    }
+    if (theme === "dark") {
+      localStorage?.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    }
+    if (theme === "system") {
+      localStorage?.removeItem("theme");
+      const mediaDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+      document.documentElement.classList.toggle("dark", mediaDarkTheme.matches);
+    }
+    document
+      .querySelectorAll("[data-theme-button]")
+      .forEach((element) => element.classList.remove(...activeThemeClasses));
+    document
+      .querySelectorAll(`[data-theme-button=${theme}]`)
+      .forEach((element) => element.classList.add(...activeThemeClasses));
+  }
+</script>
