@@ -10,13 +10,16 @@ type Props = {
 };
 
 const { title, author, description } = Astro.props;
+
+const defaultDescription = "Hi there, I'm Aakash! Welcome to my portfolio!";
+const pageDescription = description || defaultDescription;
 ---
 
 <BaseLayout
   section="Portfolio"
   title={title}
   author={author}
-  description={description}
+  description={pageDescription}
 >
   <HeaderPortfolio />
   <main class="container flex max-w-3xl grow flex-col gap-10">
