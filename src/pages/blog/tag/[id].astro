@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
+import DateTime from "@/components/datetime.astro";
 import { Badge } from "@/components/ui/badge";
 import LayoutBlog from "@/layouts/layout-blog.astro";
 
@@ -35,7 +36,7 @@ const title = `Tag: ${tag}`;
             {post.data.description}
           </p>
           <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-            {post.data.created.toLocaleDateString()}
+            <DateTime dt={post.data.created} />
           </p>
           <div class="flex gap-3">
             {post.data.tags.map((tag) => (

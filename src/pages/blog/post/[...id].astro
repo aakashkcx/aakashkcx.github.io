@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
+import DateTime from "@/components/datetime.astro";
 import Prose from "@/components/prose.astro";
 import { Badge } from "@/components/ui/badge";
 import LayoutBlog from "@/layouts/layout-blog.astro";
@@ -35,10 +36,12 @@ const { Content } = await render(post);
     <div
       class="text-muted-foreground flex flex-col justify-between gap-3 sm:flex-row"
     >
-      <span>Published {post.data.created.toLocaleString()}</span>
+      <div>Published <DateTime dt={post.data.created} time /></div>
       {
         post.data.updated && (
-          <span>Updated {post.data.updated.toLocaleString()}</span>
+          <div>
+            Updated <DateTime dt={post.data.updated} time />
+          </div>
         )
       }
     </div>
