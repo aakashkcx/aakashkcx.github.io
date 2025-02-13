@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+import DateTime from "@/components/datetime.astro";
+import { Badge } from "@/components/ui/badge";
+import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => project.data.published)
+  .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf());
+---
+
+<LayoutPortfolio title="Projects">
+  <h1 class="text-4xl font-semibold tracking-tight">Projects</h1>
+  <section class="flex flex-col gap-10">
+    {
+      projects.map((project) => (
+        <a
+          href={`/portfolio/project/${project.id}`}
+          class="group flex flex-col gap-3"
+        >
+          <h4 class="text-xl font-semibold tracking-tight">
+            {project.data.title}
+          </h4>
+          <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
+            {project.data.description}
+          </p>
+          <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+            <DateTime dt={project.data.created} />
+          </p>
+          <div class="flex gap-3">
+            {project.data.tags.map((tag) => (
+              <Badge className="bg-muted-foreground group-hover:bg-primary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </section>
+</LayoutPortfolio>

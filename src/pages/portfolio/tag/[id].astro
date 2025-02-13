@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+
+import DateTime from "@/components/datetime.astro";
+import { Badge } from "@/components/ui/badge";
+import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  const tags = Array.from(
+    new Set(projects.flatMap((project) => project.data.tags))
+  );
+
+  return tags.map((tag) => ({
+    params: { id: tag },
+    props: {
+      tag,
+      projects: projects.filter((project) => project.data.tags.includes(tag)),
+    },
+  }));
+}
+
+const { tag, projects } = Astro.props;
+
+const title = `Tag: ${tag}`;
+---
+
+<LayoutPortfolio title={title}>
+  <header class="flex flex-row items-center gap-3 font-semibold">
+    <h1 class="text-4xl tracking-tight">Tag:</h1>
+    <Badge size="lg" className="px-4 text-3xl">{tag}</Badge>
+  </header>
+  <section class="flex flex-col gap-10">
+    {
+      projects.map((project) => (
+        <a
+          href={`/portfolio/project/${project.id}`}
+          class="group flex flex-col gap-3"
+        >
+          <h4 class="text-xl font-semibold tracking-tight">
+            {project.data.title}
+          </h4>
+          <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
+            {project.data.description}
+          </p>
+          <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+            <DateTime dt={project.data.created} />
+          </p>
+          <div class="flex gap-3">
+            {project.data.tags.map((tag) => (
+              <Badge className="bg-muted-foreground group-hover:bg-primary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </a>
+      ))
+    }
+  </section>
+</LayoutPortfolio>
