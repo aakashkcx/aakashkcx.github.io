@@ -18,6 +18,54 @@
   max-width: var(--container-6xl);
 }
 
+@utility prose {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply scroll-m-20 font-semibold tracking-tight;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  h6 {
+    @apply text-base;
+  }
+  a {
+    @apply font-medium underline underline-offset-4;
+  }
+  code {
+    @apply bg-muted relative rounded-sm px-1.5 py-0.5 text-sm font-semibold;
+    &::before,
+    &::after {
+      @apply content-none;
+    }
+  }
+  pre {
+    @apply !bg-muted rounded-xl p-4;
+    & code {
+      @apply font-medium;
+    }
+  }
+  img {
+    @apply rounded-xl;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
