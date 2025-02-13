@@ -1,5 +1,15 @@
 ---
+import { getCollection } from "astro:content";
+
+import DateTime from "@/components/datetime.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
+
+const newProjects = (await getCollection("projects"))
+  .filter((project) => project.data.published)
+  .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
+  .slice(0, 3);
 ---
 
 <LayoutPortfolio>
@@ -7,4 +17,40 @@ import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
     <h1 class="text-4xl tracking-tight">Hi there, I'm Aakash! 👋</h1>
     <h2 class="text-3xl tracking-tight">Welcome to my portfolio!</h2>
   </header>
+  <section class="flex flex-col gap-10">
+    <h3 class="text-2xl font-semibold tracking-tight">Latest Projects</h3>
+    <div class="flex flex-col gap-10">
+      {
+        newProjects.map((projects) => (
+          <a
+            href={`/portfolio/project/${projects.id}`}
+            class="group flex flex-col gap-3"
+          >
+            <h4
+              class="text-xl font-semibold tracking-tight"
+              transition:name={`project-${projects.id}-title`}
+            >
+              {projects.data.title}
+            </h4>
+            <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
+              {projects.data.description}
+            </p>
+            <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+              <DateTime dt={projects.data.created} />
+            </p>
+            <div class="flex gap-3">
+              {projects.data.tags.map((tag) => (
+                <Badge className="bg-muted-foreground group-hover:bg-primary">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <Button asLink href="/portfolio/projects" variant="secondary"
+      >View all projects</Button
+    >
+  </section>
 </LayoutPortfolio>

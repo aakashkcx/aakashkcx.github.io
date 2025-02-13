@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+import DateTime from "@/components/datetime.astro";
+import Prose from "@/components/prose.astro";
+import { Badge } from "@/components/ui/badge";
+import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
+
+export async function getStaticPaths() {
+  return (await getCollection("projects")).map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+---
+
+<LayoutPortfolio
+  title={project.data.title}
+  description={project.data.description}
+>
+  <h1 class="text-center text-4xl font-semibold tracking-tight sm:text-left">
+    {project.data.title}
+  </h1>
+  {
+    project.data.image && (
+      <Image
+        src={project.data.image}
+        alt={project.data.description}
+        class="mx-auto max-h-100 w-fit rounded-xl"
+      />
+    )
+  }
+  <section class="flex flex-col gap-5">
+    <div
+      class="text-muted-foreground flex flex-col justify-between gap-3 sm:flex-row"
+    >
+      <div>Published <DateTime dt={project.data.created} time /></div>
+      {
+        project.data.updated && (
+          <div>
+            Updated <DateTime dt={project.data.updated} time />
+          </div>
+        )
+      }
+    </div>
+    <div class="flex flex-wrap gap-3">
+      {
+        project.data.tags.map((tag) => (
+          <Badge asLink href={`/portfolio/tag/${tag}`} size="lg">
+            {tag}
+          </Badge>
+        ))
+      }
+    </div>
+  </section>
+  <Prose>
+    <Content />
+  </Prose>
+</LayoutPortfolio>
