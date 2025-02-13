@@ -40,7 +40,7 @@ const title = `Tag: ${tag}`;
           </p>
           <div class="flex gap-3">
             {post.data.tags.map((tag) => (
-              <Badge className="bg-muted-foreground group-hover:bg-primary">
+              <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
                 {tag}
               </Badge>
             ))}

@@ -40,7 +40,7 @@ const newProjects = (await getCollection("projects"))
             </p>
             <div class="flex gap-3">
               {projects.data.tags.map((tag) => (
-                <Badge className="bg-muted-foreground group-hover:bg-primary">
+                <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
                   {tag}
                 </Badge>
               ))}
