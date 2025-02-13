@@ -1,0 +1,22 @@
+---
+type Props = {
+  dt: Date;
+  time?: boolean;
+};
+
+const { dt, time = false } = Astro.props;
+
+const serverDate = time ? dt.toLocaleString() : dt.toLocaleDateString();
+---
+
+<time datetime={dt.toISOString()} data-dt={dt.valueOf()} data-time={time}>
+  {serverDate}
+</time>
+
+<script>
+  document.querySelectorAll("time").forEach((element) => {
+    const dt = new Date(parseInt(element.dataset.dt ?? ""));
+    const time = element.dataset.time === "true";
+    element.textContent = time ? dt.toLocaleString() : dt.toLocaleDateString();
+  });
+</script>
