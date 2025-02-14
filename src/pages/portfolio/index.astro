@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
 
-const newProjects = (await getCollection("projects"))
+const latestProjects = (await getCollection("projects"))
   .filter((project) => project.data.published)
   .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
   .slice(0, 3);
@@ -21,22 +21,22 @@ const newProjects = (await getCollection("projects"))
     <h3 class="text-2xl font-semibold tracking-tight">Latest Projects</h3>
     <div class="flex flex-col gap-10">
       {
-        newProjects.map((projects) => (
+        latestProjects.map((project) => (
           <a
-            href={`/portfolio/project/${projects.id}`}
+            href={`/portfolio/project/${project.id}`}
             class="group flex flex-col gap-3"
           >
             <h4 class="text-xl font-semibold tracking-tight">
-              {projects.data.title}
+              {project.data.title}
             </h4>
             <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
-              {projects.data.description}
+              {project.data.description}
             </p>
             <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-              <DateTime dt={projects.data.created} />
+              <DateTime dt={project.data.created} />
             </p>
             <div class="flex gap-3">
-              {projects.data.tags.map((tag) => (
+              {project.data.tags.map((tag) => (
                 <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
                   {tag}
                 </Badge>
