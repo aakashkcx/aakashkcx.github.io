@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import DateTime from "@/components/datetime.astro";
@@ -6,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
 
-const newProjects = (await getCollection("projects"))
+const latestProjects = (await getCollection("projects"))
   .filter((project) => project.data.published)
   .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
   .slice(0, 3);
@@ -21,29 +22,33 @@ const newProjects = (await getCollection("projects"))
     <h3 class="text-2xl font-semibold tracking-tight">Latest Projects</h3>
     <div class="flex flex-col gap-10">
       {
-        newProjects.map((projects) => (
+        latestProjects.map((project) => (
           <a
-            href={`/portfolio/project/${projects.id}`}
-            class="group flex flex-col gap-3"
+            href={`/portfolio/project/${project.id}`}
+            class="group flex flex-row gap-7.5"
           >
-            <h4
-              class="text-xl font-semibold tracking-tight"
-              transition:name={`project-${projects.id}-title`}
-            >
-              {projects.data.title}
-            </h4>
-            <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
-              {projects.data.description}
-            </p>
-            <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-              <DateTime dt={projects.data.created} />
-            </p>
-            <div class="flex gap-3">
-              {projects.data.tags.map((tag) => (
-                <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
-                  {tag}
-                </Badge>
-              ))}
+            <Image
+              src={project.data.image.src}
+              alt={project.data.image.alt}
+              class="size-40 self-center rounded-xl object-cover"
+            />
+            <div class="flex grow flex-col gap-3">
+              <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+                <DateTime dt={project.data.created} />
+              </p>
+              <h4 class="line-clamp-1 text-xl font-semibold tracking-tight">
+                {project.data.title}
+              </h4>
+              <p class="text-muted-foreground group-hover:text-foreground line-clamp-2 transition-colors">
+                {project.data.description}
+              </p>
+              <div class="flex gap-3">
+                {project.data.tags.map((tag) => (
+                  <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </a>
         ))

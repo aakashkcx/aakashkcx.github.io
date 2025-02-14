@@ -29,8 +29,8 @@ const { Content } = await render(project);
   {
     project.data.image && (
       <Image
-        src={project.data.image}
-        alt={project.data.description}
+        src={project.data.image.src}
+        alt={project.data.image.alt}
         class="mx-auto max-h-100 w-fit rounded-xl"
       />
     )

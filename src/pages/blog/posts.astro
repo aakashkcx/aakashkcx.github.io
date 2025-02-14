@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import DateTime from "@/components/datetime.astro";
@@ -15,22 +16,29 @@ const posts = (await getCollection("posts"))
   <section class="flex flex-col gap-10">
     {
       posts.map((post) => (
-        <a href={`/blog/post/${post.id}`} class="group flex flex-col gap-3">
-          <h4 class="text-xl font-semibold tracking-tight">
-            {post.data.title}
-          </h4>
-          <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
-            {post.data.description}
-          </p>
-          <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
-            <DateTime dt={post.data.created} />
-          </p>
-          <div class="flex gap-3">
-            {post.data.tags.map((tag) => (
-              <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
-                {tag}
-              </Badge>
-            ))}
+        <a href={`/blog/post/${post.id}`} class="group flex flex-row gap-7.5">
+          <Image
+            src={post.data.image.src}
+            alt={post.data.image.alt}
+            class="size-50 self-center rounded-xl object-cover"
+          />
+          <div class="flex grow flex-col gap-3">
+            <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
+              <DateTime dt={post.data.created} />
+            </p>
+            <h4 class="line-clamp-2 text-xl font-semibold tracking-tight">
+              {post.data.title}
+            </h4>
+            <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 transition-colors">
+              {post.data.description}
+            </p>
+            <div class="flex gap-3">
+              {post.data.tags.map((tag) => (
+                <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
           </div>
         </a>
       ))
