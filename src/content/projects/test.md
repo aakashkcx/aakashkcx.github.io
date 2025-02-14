@@ -4,7 +4,9 @@ description: Testing Astro markdown collections
 published: true
 created: 2025-01-01 00:00:00
 updated: 2025-01-01 00:00:00
-image: "@/assets/images/profile.png"
+image:
+  src: "@/assets/images/headshot.jpg"
+  alt: alt text
 tags:
   - test
   - tag

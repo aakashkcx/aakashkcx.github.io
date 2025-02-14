@@ -10,7 +10,10 @@ const posts = defineCollection({
       published: z.boolean(),
       created: z.date(),
       updated: z.date().optional(),
-      image: image().optional(),
+      image: z.object({
+        src: image(),
+        alt: z.string(),
+      }),
       tags: z.array(z.string()).default([]),
     }),
 });
@@ -24,7 +27,10 @@ const projects = defineCollection({
       published: z.boolean(),
       created: z.date(),
       updated: z.date().optional(),
-      image: image().optional(),
+      image: z.object({
+        src: image(),
+        alt: z.string(),
+      }),
       tags: z.array(z.string()).default([]),
     }),
 });
