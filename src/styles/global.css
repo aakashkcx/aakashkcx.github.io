@@ -12,15 +12,12 @@
 }
 
 @utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-  max-width: var(--container-6xl);
+  @apply mx-auto max-w-6xl px-8;
 }
 
 @utility prose {
-  & {
     @apply font-serif;
-  }
+
   h1,
   h2,
   h3,
@@ -51,15 +48,11 @@
     @apply font-medium underline underline-offset-4;
   }
   code {
-    @apply bg-muted relative rounded-sm px-1.5 py-0.5 text-sm font-semibold;
-    &::before,
-    &::after {
-      @apply content-none;
-    }
+    @apply bg-muted relative rounded-md px-1.5 py-0.5 text-sm font-semibold before:content-none after:content-none;
   }
   pre {
     @apply !bg-muted rounded-xl p-4;
-    & code {
+    code {
       @apply font-medium;
     }
   }
@@ -88,16 +81,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
 :root {
@@ -120,8 +103,6 @@
   --border: var(--color-neutral-200);
   --input: var(--color-neutral-200);
   --ring: var(--color-neutral-950);
-
-  --radius: 0.6rem;
 }
 
 .dark {
@@ -145,22 +126,9 @@
   --input: var(--color-neutral-800);
   --ring: var(--color-neutral-300);
 
-  & .astro-code,
-  & .astro-code span {
-    color: var(--shiki-dark) !important;
+  .astro-code span {
+    @apply !text-(--shiki-dark);
   }
-}
-
-.violet {
-  --primary: var(--color-violet-500);
-  --primary-foreground: var(--color-neutral-50);
-  --ring: var(--color-violet-500);
-}
-
-.violet.dark {
-  --primary: var(--color-violet-800);
-  --primary-foreground: var(--color-neutral-50);
-  --ring: var(--color-violet-800);
 }
 
 @layer base {
