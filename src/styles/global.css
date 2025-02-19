@@ -48,7 +48,7 @@
     @apply font-medium underline underline-offset-4;
   }
   code {
-    @apply bg-muted relative rounded-sm px-1.5 py-0.5 text-sm font-semibold before:content-none after:content-none;
+    @apply bg-muted relative rounded-md px-1.5 py-0.5 text-sm font-semibold before:content-none after:content-none;
   }
   pre {
     @apply !bg-muted rounded-xl p-4;
