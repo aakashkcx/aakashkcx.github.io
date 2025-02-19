@@ -9,8 +9,6 @@
   --font-sans: Geist Variable, ui-sans-serif, system-ui, sans-serif;
   --font-serif: Domine Variable, ui-serif, serif;
   --font-mono: Geist Mono Variable, ui-monospace, monospace;
-
-  --breakpoint-xs: 25rem;
 }
 
 @utility container {
