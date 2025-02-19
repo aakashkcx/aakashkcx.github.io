@@ -41,12 +41,12 @@ const title = `Tag: ${tag}`;
       projects.map((project) => (
         <a
           href={`/portfolio/project/${project.id}`}
-          class="group flex flex-row gap-7.5"
+          class="group flex flex-col gap-5 sm:flex-row sm:gap-7.5"
         >
           <Image
             src={project.data.image.src}
             alt={project.data.image.alt}
-            class="size-50 self-center rounded-xl object-cover"
+            class="max-h-75 self-center rounded-xl object-cover sm:size-50"
           />
           <div class="flex grow flex-col gap-3">
             <p class="text-muted-foreground group-hover:text-foreground text-sm transition-colors">
