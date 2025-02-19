@@ -17,6 +17,7 @@
     "@astrojs/mdx": "^4.0.8",
     "@astrojs/react": "^4.2.0",
     "@astrojs/rss": "^4.0.11",
+    "@fontsource-variable/domine": "^5.1.1",
     "@fontsource-variable/geist": "^5.0.1",
     "@fontsource-variable/geist-mono": "^5.0.1",
     "@tailwindcss/vite": "^4.0.6",
