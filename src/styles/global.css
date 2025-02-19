@@ -16,7 +16,7 @@
 }
 
 @utility prose {
-    @apply font-serif;
+  @apply font-serif;
 
   h1,
   h2,
@@ -58,6 +58,12 @@
   }
   img {
     @apply rounded-xl;
+  }
+  sup a {
+    @apply no-underline before:content-["\["] after:content-["\]"] hover:underline;
+  }
+  .footnotes {
+    @apply border-t;
   }
 }
 
