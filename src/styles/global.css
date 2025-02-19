@@ -126,9 +126,8 @@
   --input: var(--color-neutral-800);
   --ring: var(--color-neutral-300);
 
-  & .astro-code,
-  & .astro-code span {
-    color: var(--shiki-dark) !important;
+  .astro-code span {
+    @apply !text-(--shiki-dark);
   }
 }
 
