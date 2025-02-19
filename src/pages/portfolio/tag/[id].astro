@@ -30,7 +30,9 @@ const title = `Tag: ${tag}`;
 ---
 
 <LayoutPortfolio title={title}>
-  <header class="flex flex-row items-center gap-3 font-semibold">
+  <header
+    class="flex flex-row items-center justify-center gap-3 font-semibold sm:justify-start"
+  >
     <h1 class="text-4xl tracking-tight">Tag:</h1>
     <Badge size="lg" className="px-4 text-3xl">{tag}</Badge>
   </header>

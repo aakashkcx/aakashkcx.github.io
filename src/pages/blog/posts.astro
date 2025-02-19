@@ -12,7 +12,9 @@ const posts = (await getCollection("posts"))
 ---
 
 <LayoutBlog title="Posts">
-  <h1 class="text-4xl font-semibold tracking-tight">Posts</h1>
+  <h1 class="text-center text-4xl font-semibold tracking-tight sm:text-left">
+    Posts
+  </h1>
   <section class="flex flex-col gap-10">
     {
       posts.map((post) => (

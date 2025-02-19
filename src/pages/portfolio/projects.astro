@@ -12,7 +12,9 @@ const projects = (await getCollection("projects"))
 ---
 
 <LayoutPortfolio title="Projects">
-  <h1 class="text-4xl font-semibold tracking-tight">Projects</h1>
+  <h1 class="text-center text-4xl font-semibold tracking-tight sm:text-left">
+    Projects
+  </h1>
   <section class="flex flex-col gap-10">
     {
       projects.map((project) => (
