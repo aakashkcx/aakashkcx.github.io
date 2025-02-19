@@ -81,16 +81,6 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
 :root {
@@ -113,8 +103,6 @@
   --border: var(--color-neutral-200);
   --input: var(--color-neutral-200);
   --ring: var(--color-neutral-950);
-
-  --radius: 0.6rem;
 }
 
 .dark {
@@ -142,18 +130,6 @@
   & .astro-code span {
     color: var(--shiki-dark) !important;
   }
-}
-
-.violet {
-  --primary: var(--color-violet-500);
-  --primary-foreground: var(--color-neutral-50);
-  --ring: var(--color-violet-500);
-}
-
-.violet.dark {
-  --primary: var(--color-violet-800);
-  --primary-foreground: var(--color-neutral-50);
-  --ring: var(--color-violet-800);
 }
 
 @layer base {
