@@ -31,7 +31,9 @@ const { Content } = await render(project);
   >
     {project.data.title}
   </h1>
-  <section class="flex flex-wrap justify-center gap-5 sm:justify-start">
+  <section
+    class="flex flex-wrap justify-center gap-x-5 gap-y-3 sm:justify-start"
+  >
     {
       project.data.links.map((link) => (
         <a href={link.href} class="font-medium underline underline-offset-4">
