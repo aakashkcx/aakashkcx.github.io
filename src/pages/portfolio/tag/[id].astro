@@ -8,7 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = (await getCollection("projects"))
+    .filter((project) => project.data.published)
+    .toSorted((a, b) => b.data.started.valueOf() - a.data.started.valueOf());
   const tags = Array.from(
     new Set(projects.flatMap((project) => project.data.tags))
   );
