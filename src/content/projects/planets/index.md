@@ -20,6 +20,6 @@ tags:
 
 This project builds an accurate model of the solar system using TypeScript, the Canvas API, and real-life physics with [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation).
 
-![A solar system model showing the 4 inner planets.](./planets.png)
+![The model showing the 4 inner planets.](./planets.png)
 
-![A solar system model showing the first 6 planets and their orbits.](./planets-wide.png)
+![The model showing the first 6 planets and their orbits.](./planets-wide.png)
