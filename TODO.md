@@ -1,1 +1,11 @@
-- add images to posts and projects list
+- [x] add images to posts and projects list
+- [ ] populate portfolio
+  - [ ] eight-ball
+  - [ ] twitter-clone-2020
+  - [ ] algorithms
+  - [ ] chess-game
+  - [ ] chess-engine
+  - [ ] twitter-clone
+  - [x] planets
+- [ ] add LaTeX to blog using [KaTeX](https://katex.org/)
+- [ ] populate blog
