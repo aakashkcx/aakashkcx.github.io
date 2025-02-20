@@ -1,8 +1,8 @@
 - [x] add images to posts and projects list
 - [ ] populate portfolio
-  - [ ] eight-ball
+  - [x] eight-ball
+  - [x] algorithms
   - [ ] twitter-clone-2020
-  - [ ] algorithms
   - [ ] chess-game
   - [ ] chess-engine
   - [ ] twitter-clone
