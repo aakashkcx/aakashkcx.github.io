@@ -41,12 +41,12 @@ const { Content } = await render(post);
     <div
       class="text-muted-foreground flex flex-col justify-between gap-3 sm:flex-row"
     >
-      <div>Published <DateTime dt={post.data.created} time /></div>
+      <span>Published <DateTime dt={post.data.created} time /></span>
       {
         post.data.updated && (
-          <div>
+          <span>
             Updated <DateTime dt={post.data.updated} time />
-          </div>
+          </span>
         )
       }
     </div>
