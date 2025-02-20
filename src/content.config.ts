@@ -25,12 +25,15 @@ const projects = defineCollection({
       title: z.string(),
       description: z.string(),
       published: z.boolean(),
-      created: z.date(),
+      started: z.date(),
       updated: z.date().optional(),
       image: z.object({
         src: image(),
         alt: z.string(),
       }),
+      links: z
+        .array(z.object({ href: z.string().url(), name: z.string() }))
+        .default([]),
       tags: z.array(z.string()).default([]),
     }),
 });
