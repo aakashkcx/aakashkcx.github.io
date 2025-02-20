@@ -2,10 +2,14 @@
 title: Portfolio Project Test 2 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, hic!
 description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius explicabo fuga eveniet optio, perspiciatis, odio aut ex earum quisquam eaque totam inventore quod cupiditate recusandae! Provident numquam, fugit iusto dolorum tempora nesciunt deleniti commodi aut dicta quisquam ipsa ea ratione magnam, eos recusandae incidunt beatae minima minus sequi officiis et?
 published: true
-created: 2025-02-01 00:00:00
+started: 2020-02-01 00:00:00
+updated: 2025-02-01 00:00:00
 image:
   src: "@/assets/images/profile.png"
   alt: alt text
+links:
+  - name: GitHub
+    href: https://github.com/aakashkcx/
 tags:
   - test
   - astro

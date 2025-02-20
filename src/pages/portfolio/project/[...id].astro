@@ -31,6 +31,17 @@ const { Content } = await render(project);
   >
     {project.data.title}
   </h1>
+  <section
+    class="flex flex-wrap justify-center gap-x-5 gap-y-3 sm:justify-start"
+  >
+    {
+      project.data.links.map((link) => (
+        <a href={link.href} class="font-medium underline underline-offset-4">
+          {link.name}
+        </a>
+      ))
+    }
+  </section>
   {
     project.data.image && (
       <Image
@@ -44,12 +55,12 @@ const { Content } = await render(project);
     <div
       class="text-muted-foreground flex flex-col justify-between gap-3 sm:flex-row"
     >
-      <div>Published <DateTime dt={project.data.created} time /></div>
+      <span>Started <DateTime dt={project.data.started} /></span>
       {
         project.data.updated && (
-          <div>
-            Updated <DateTime dt={project.data.updated} time />
-          </div>
+          <span>
+            Updated <DateTime dt={project.data.updated} />
+          </span>
         )
       }
     </div>
