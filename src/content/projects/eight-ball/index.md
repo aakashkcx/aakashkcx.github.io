@@ -26,14 +26,14 @@ A multiplayer 8 ball pool game built using JavaScript, Express, WebSockets, and 
 Gameplay:
 ![The multiplayer gameplay.](/assets/eight-ball/eight-ball-gameplay.gif)
 
-Physics:
+Physics collisions:
 ![The ball collisions in game.](/assets/eight-ball/eight-ball-physics.gif)
 
-Dashboard:
+Dashboard page:
 ![The dashboard of the game.](./eight-ball-dashboard.png)
 
-Profile:
+Profile page:
 ![The profile page of the game.](./eight-ball-profile.png)
 
-Leaderboard:
+Leaderboard page:
 ![The leaderboard page of the game.](./eight-ball-leaderboard.png)
