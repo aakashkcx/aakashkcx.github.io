@@ -27,10 +27,7 @@ const tagCounts = tags
   <section class="flex flex-col gap-10">
     {
       tagCounts.map((tc) => (
-        <a
-          href={`/portfolio/tag/${tc.tag}`}
-          class="group flex flex-col items-start gap-3"
-        >
+        <a href={`/portfolio/tag/${tc.tag}`} class="group flex flex-col gap-3">
           <Badge size="lg">{tc.tag}</Badge>
           <p class="text-muted-foreground group-hover:text-foreground transition-colors">
             {tc.count} {tc.count > 1 ? "Projects" : "Project"}
