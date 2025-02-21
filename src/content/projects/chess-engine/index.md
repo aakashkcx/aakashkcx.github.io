@@ -23,4 +23,4 @@ This project features a chess engine built using TypeScript - a high level langu
 
 _This project is based on my final year project at university._
 
-A playable game can be found at [chess-game](./chess-game).
+A playable game can be found at [chess-game](/portfolio/project/chess-game).

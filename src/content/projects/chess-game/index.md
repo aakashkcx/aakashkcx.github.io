@@ -21,4 +21,4 @@ tags:
   - cd
 ---
 
-This project showcases the [chess engine](./chess-engine) that I built previously with a playable React single page application.
+This project showcases the [chess engine](/portfolio/project/chess-engine) that I built previously with a playable React single page application.
