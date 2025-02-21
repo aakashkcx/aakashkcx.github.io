@@ -10,7 +10,7 @@ import LayoutPortfolio from "@/layouts/layout-portfolio.astro";
 const latestProjects = (await getCollection("projects"))
   .filter((project) => project.data.published)
   .toSorted((a, b) => b.data.started.valueOf() - a.data.started.valueOf())
-  .slice(0, 3);
+  .slice(0, 2);
 ---
 
 <LayoutPortfolio>

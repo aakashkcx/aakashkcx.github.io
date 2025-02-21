@@ -10,7 +10,7 @@ import LayoutBlog from "@/layouts/layout-blog.astro";
 const latestPosts = (await getCollection("posts"))
   .filter((post) => post.data.published)
   .toSorted((a, b) => b.data.created.valueOf() - a.data.created.valueOf())
-  .slice(0, 3);
+  .slice(0, 2);
 ---
 
 <LayoutBlog>
