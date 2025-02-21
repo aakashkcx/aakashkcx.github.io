@@ -2,9 +2,9 @@
 - [ ] populate portfolio
   - [x] eight-ball
   - [x] algorithms
-  - [ ] twitter-clone-2020
-  - [ ] chess-game
-  - [ ] chess-engine
+  - [x] twitter-clone-2019
+  - [x] chess-game
+  - [x] chess-engine
   - [ ] twitter-clone
   - [x] planets
 - [ ] add LaTeX to blog using [KaTeX](https://katex.org/)
