@@ -55,7 +55,7 @@ const title = `Tag: ${tag}`;
             <p class="text-muted-foreground group-hover:text-foreground line-clamp-3 font-serif transition-colors">
               {post.data.description}
             </p>
-            <div class="flex gap-3">
+            <div class="flex flex-wrap gap-3">
               {post.data.tags.map((tag) => (
                 <Badge className="bg-muted-foreground group-hover:bg-primary transition-colors">
                   {tag}
