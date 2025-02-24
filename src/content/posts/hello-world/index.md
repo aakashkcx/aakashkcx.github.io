@@ -2,7 +2,7 @@
 title: Hello World!
 description: Welcome to the launch of my blog! 👋
 published: true
-created: 2025-02-23 00:00:00
+created: 2025-02-24 00:00:00
 image:
   src: "@/assets/images/astro.svg"
   alt: Astro logomark.
