@@ -1,12 +1,12 @@
 ---
 title: Blog Post Test 1
-description: Testing Astro markdown collections
-published: true
+description: Testing Astro markdown collections.
+published: false
 created: 2025-01-01 00:00:00
 updated: 2025-01-02 00:00:00
 image:
-  src: "@/assets/images/headshot.jpg"
-  alt: alt text
+  src: "@/assets/images/astro.svg"
+  alt: Astro logomark.
 tags:
   - test
   - tag

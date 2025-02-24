@@ -1,14 +1,18 @@
 ---
-title: Blog Post Test 2 - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, hic!
-description: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius explicabo fuga eveniet optio, perspiciatis, odio aut ex earum quisquam eaque totam inventore quod cupiditate recusandae! Provident numquam, fugit iusto dolorum tempora nesciunt deleniti commodi aut dicta quisquam ipsa ea ratione magnam, eos recusandae incidunt beatae minima minus sequi officiis et?
-published: true
-created: 2025-02-01 00:00:00
+title: Portfolio Project Test 1
+description: Testing Astro markdown collections.
+published: false
+started: 2025-01-01 00:00:00
+updated: 2025-01-02 00:00:00
 image:
-  src: "@/assets/images/profile.png"
-  alt: alt text
+  src: "@/assets/images/astro.svg"
+  alt: Astro logomark.
+links:
+  - name: GitHub
+    href: https://github.com/aakashkcx/
 tags:
   - test
-  - astro
+  - tag
 ---
 
 # Markdown
