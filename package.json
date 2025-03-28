@@ -31,7 +31,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.17",
-    "tailwindcss-animate": "^1.0.7"
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
