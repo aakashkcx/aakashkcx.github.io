@@ -220,3 +220,50 @@ import headshot from "@/assets/images/headshot.jpg";
     </section>
   </main>
 </Layout>
+
+<style is:global>
+  @media print {
+    :root {
+      font-size: 10pt;
+    }
+
+    body > header,
+    body > footer {
+      display: none;
+    }
+
+    main {
+      padding: 0;
+      max-width: none;
+    }
+
+    h1 {
+      font-size: 36pt;
+    }
+    h2 {
+      font-size: 14pt;
+      padding-bottom: 5pt;
+    }
+    h4 {
+      font-size: 12pt;
+    }
+
+    img {
+      width: 150px;
+    }
+
+    .flex-col.gap-10 {
+      gap: 7.5pt;
+    }
+
+    .flex-col.gap-5 {
+      gap: 5pt;
+    }
+    .flex-col.gap-3 {
+      gap: 1pt;
+    }
+    .flex-col.gap-1 {
+      gap: 1pt;
+    }
+  }
+</style>
