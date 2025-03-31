@@ -1,0 +1,222 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { Image } from "astro:assets";
+
+import headshot from "@/assets/images/headshot.jpg";
+---
+
+<Layout title="Resume" description="Hi there, I'm Aakash! Here is my resume!">
+  <main class="container flex max-w-3xl grow flex-col gap-10 font-serif">
+    <header class="flex flex-row items-center justify-between">
+      <div class="flex flex-col gap-5">
+        <h1 class="font-sans text-6xl font-semibold tracking-tight">
+          Aakash Kc
+        </h1>
+        <div class="flex flex-col gap-1">
+          <span>London, United Kingdom</span>
+          <div class="flex flex-row gap-3 font-medium">
+            <a
+              class="underline underline-offset-4"
+              href="mailto:aakashkc.kc@gmail.com">Email</a
+            >
+            <a
+              class="underline underline-offset-4"
+              href="https://aakashkcx.github.io/">Website</a
+            >
+            <a
+              class="underline underline-offset-4"
+              href="https://github.com/aakashkcx/">Github</a
+            >
+            <a
+              class="underline underline-offset-4"
+              href="https://www.linkedin.com/in/aakashkc/">LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+      <Image
+        src={headshot}
+        alt="Headshot of Aakash Kc"
+        class="aspect-square size-50 h-auto max-w-full rounded-full"
+      />
+    </header>
+    <section class="flex flex-col gap-5">
+      <h2 class="border-b pb-2 text-3xl font-semibold tracking-tight">
+        Education
+      </h2>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">University of Warwick</h4>
+          <span>(Sep 2017 - Jun 2019)</span>
+        </div>
+        <p>Bachelor of Science (BSc) in Computer Science</p>
+      </article>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">Saint Olave's Grammar School</h4>
+          <span>(Oct 2019 - Jul 2022)</span>
+        </div>
+        <p>
+          A Level Maths, Further Maths, Physics, Computer Science, AS Chemistry
+        </p>
+      </article>
+    </section>
+    <section class="flex flex-col gap-5">
+      <h2 class="border-b pb-2 text-3xl font-semibold tracking-tight">
+        Experience
+      </h2>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">JPMorganChase</h4>
+          <span>(Sep 2022 - Present)</span>
+        </div>
+        <span>Software Engineer</span>
+        <ul class="flex list-inside list-disc flex-row gap-4">
+          <li>Python</li>
+          <li>AWS</li>
+          <li>Distributed Systems</li>
+        </ul>
+      </article>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">United Codes</h4>
+          <span>(Jul 2021 - Sep 2021)</span>
+        </div>
+        <p>Software Engineer Intern</p>
+        <p class="text-muted-foreground">
+          Supported the launch of Cloud Office Print, a SaaS document generation
+          engine. Developed the product website and technical documentation
+          using SSG. Implemented new features and improvements across the
+          Python, TypeScript, and Java SDKs.
+        </p>
+        <ul class="flex list-inside list-disc flex-row gap-4">
+          <li>TypeScript</li>
+          <li>Python</li>
+          <li>Java</li>
+        </ul>
+      </article>
+    </section>
+    <section class="flex flex-col gap-5">
+      <h2 class="border-b pb-2 text-3xl font-semibold tracking-tight">
+        Projects
+      </h2>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">chess-engine</h4>
+          <span>(Apr 2023 - Feb 2025)</span>
+        </div>
+        <div class="flex flex-row gap-3 font-medium">
+          <a
+            href="/portfolio/project/chess-engine"
+            class="underline underline-offset-4">Link</a
+          >
+          <a
+            href="/portfolio/project/chess-game"
+            class="underline underline-offset-4">Game</a
+          >
+          <a
+            href="https://aakashkcx.github.io/chess-game/"
+            class="underline underline-offset-4">Deployment</a
+          >
+          <a
+            href="https://github.com/aakashkcx/chess-engine"
+            class="underline underline-offset-4">GitHub</a
+          >
+          <a
+            href="https://www.npmjs.com/package/@aakashkcx/chess-engine"
+            class="underline underline-offset-4">Package</a
+          >
+        </div>
+        <p class="text-muted-foreground">
+          Developed a functional chess engine in TypeScript featuring an AI
+          agent capable of searching for and reccomending optimal moves.
+        </p>
+        <ul class="flex list-inside list-disc flex-row gap-4">
+          <li>TypeScript</li>
+          <li>AI</li>
+          <li>CI/CD</li>
+          <li>React</li>
+        </ul>
+      </article>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">twitter-clone</h4>
+          <span>(Sep 2019 - Jul 2020)</span>
+        </div>
+        <div class="flex flex-row gap-3 font-medium">
+          <a
+            href="/portfolio/project/twitter-clone-2019"
+            class="underline underline-offset-4">Link</a
+          >
+          <a
+            href="https://github.com/aakashkcx/twitter-clone-2019"
+            class="underline underline-offset-4">GitHub</a
+          >
+        </div>
+        <p class="text-muted-foreground">
+          Created a full-stack web application cloning Twitter's core
+          functionality, featuring an Express REST API with JWT authentication
+          and a React SPA using Material UI.
+        </p>
+        <ul class="flex list-inside list-disc flex-row gap-4">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Express</li>
+        </ul>
+      </article>
+      <article class="flex flex-col gap-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="text-xl font-semibold">algorithms</h4>
+          <span>(May 2020 - Oct 2020)</span>
+        </div>
+        <div class="flex flex-row gap-3 font-medium">
+          <a
+            href="/portfolio/project/algorithms"
+            class="underline underline-offset-4">Link</a
+          >
+          <a
+            href="https://github.com/aakashkcx/algorithms"
+            class="underline underline-offset-4">GitHub</a
+          >
+          <a
+            href="https://aakashkcx.github.io/algorithms/"
+            class="underline underline-offset-4">Deployment</a
+          >
+        </div>
+        <p class="text-muted-foreground">
+          Built an interactive web application to visualise common sorting and
+          pathfinding algorithms, built with JavaScript and Vue.js.
+        </p>
+        <ul class="flex list-inside list-disc flex-row gap-4">
+          <li>JavaScript</li>
+          <li>Vue</li>
+        </ul>
+      </article>
+    </section>
+    <section class="flex flex-col gap-5">
+      <h2 class="border-b pb-2 text-3xl font-semibold tracking-tight">
+        Skills
+      </h2>
+      <ul class="flex list-inside list-disc flex-col gap-3">
+        <li>
+          <span class="font-semibold underline underline-offset-4"
+            >Languages</span
+          >: Python, TypeScript, JavaScript, Java
+        </li>
+        <li>
+          <span class="font-semibold underline underline-offset-4"
+            >Web Technologies</span
+          >: React, HTML, CSS, Tailwind, Websockets
+        </li>
+        <li>
+          <span class="font-semibold underline underline-offset-4">Cloud</span>:
+          AWS, CI/CD, Distributed Systems
+        </li>
+        <li>
+          <span class="font-semibold underline underline-offset-4">Tools</span>:
+          Git, Linux, Bash
+        </li>
+      </ul>
+    </section>
+  </main>
+</Layout>
