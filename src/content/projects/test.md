@@ -85,6 +85,6 @@ Footnote[^1].
 
 ---
 
-[Link](https://github.com/aakashkcx/blog)
+[Link](https://aakashkcx.github.io/portfolio/)
 
 ![Alt Text](@/assets/images/profile.png)

@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
     items: posts.map((post) => {
       const { title, description, created, tags } = post.data;
       return {
-        link: `/blog/post/${post.id}`,
+        link: `/blog/${post.id}`,
         title,
         pubDate: created,
         description,

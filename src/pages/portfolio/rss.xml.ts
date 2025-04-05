@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
     items: projects.map((project) => {
       const { title, description, started, tags } = project.data;
       return {
-        link: `/portfolio/project/${project.id}`,
+        link: `/portfolio/${project.id}`,
         title,
         pubDate: started,
         description,
