@@ -24,7 +24,7 @@ const latestProjects = (await getCollection("projects"))
       {
         latestProjects.map((project) => (
           <a
-            href={`/portfolio/project/${project.id}`}
+            href={`/portfolio/${project.id}`}
             class="group flex flex-col gap-5 sm:flex-row sm:gap-7.5"
           >
             <Image

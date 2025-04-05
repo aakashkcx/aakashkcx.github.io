@@ -13,7 +13,7 @@ links:
   - name: Package
     href: https://www.npmjs.com/package/@aakashkcx/chess-engine
   - name: Game
-    href: https://aakashkcx.github.io/portfolio/project/chess-game
+    href: https://aakashkcx.github.io/portfolio/chess-game
   - name: Deployment
     href: https://aakashkcx.github.io/chess-game/
 tags:
@@ -23,7 +23,7 @@ tags:
   - ci
 ---
 
-A playable game can be found at [chess-game](/portfolio/project/chess-game).
+A playable game can be found at [chess-game](/portfolio/chess-game).
 
 This project features a chess engine built using TypeScript - a high level language, in stark contrast to the low level languages typically found to be used to build chess engines. This allows for a greater emphasis and easier understanding of the concepts behind artificial intelligence design while providing much greater code readability.
 
