@@ -14,36 +14,36 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.2",
-    "@astrojs/react": "^4.2.2",
+    "@astrojs/mdx": "^4.2.3",
+    "@astrojs/react": "^4.2.3",
     "@astrojs/rss": "^4.0.11",
     "@fontsource-variable/domine": "^5.2.5",
     "@fontsource-variable/geist": "^5.2.5",
     "@fontsource-variable/geist-mono": "^5.2.5",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.17",
-    "astro": "^5.5.5",
+    "@tailwindcss/vite": "^4.1.3",
+    "astro": "^5.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.485.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sharp": "^0.33.5",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss": "^4.0.17",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.3",
     "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "eslint": "^9.24.0",
     "eslint-plugin-astro": "^1.3.1",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.7.1"
 }
