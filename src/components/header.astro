@@ -5,27 +5,31 @@ import { Github } from "lucide-react";
 import profile from "@/assets/images/profile.png";
 ---
 
-<header class="container flex flex-row items-center justify-between py-2">
-  <a href="/" class="flex flex-row items-center gap-3 font-semibold">
-    <Image src={profile} alt="Profile picture." class="size-7 rounded-md" />
-    <span class="sr-only sm:not-sr-only">Aakash Kc</span>
-  </a>
-  <nav class="flex flex-row items-center gap-3 font-medium">
-    <a
-      href="/portfolio"
-      class="text-muted-foreground hover:text-primary p-2 transition-colors"
-      >Portfolio</a
-    >
-    <a
-      href="/blog"
-      class="text-muted-foreground hover:text-primary p-2 transition-colors"
-      >Blog</a
-    >
-    <a
-      href="https://github.com/aakashkcx"
-      class="text-muted-foreground hover:text-primary p-2 transition-colors"
-    >
-      <Github className="size-5" />
+<header
+  class="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b py-2 backdrop-blur"
+>
+  <div class="container flex flex-row items-center justify-between">
+    <a href="/" class="flex flex-row items-center gap-3 font-semibold">
+      <Image src={profile} alt="Profile picture." class="size-7 rounded-md" />
+      <span class="sr-only sm:not-sr-only">Aakash Kc</span>
     </a>
-  </nav>
+    <nav class="flex flex-row items-center gap-3 font-medium">
+      <a
+        href="/portfolio"
+        class="text-muted-foreground hover:text-primary p-2 transition-colors"
+        >Portfolio</a
+      >
+      <a
+        href="/blog"
+        class="text-muted-foreground hover:text-primary p-2 transition-colors"
+        >Blog</a
+      >
+      <a
+        href="https://github.com/aakashkcx"
+        class="text-muted-foreground hover:text-primary p-2 transition-colors"
+      >
+        <Github className="size-5" />
+      </a>
+    </nav>
+  </div>
 </header>
