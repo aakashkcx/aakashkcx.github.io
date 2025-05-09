@@ -1,26 +1,17 @@
 ---
 import Footer from "@/components/footer.astro";
 import HeaderPortfolio from "@/components/header-portfolio.astro";
-import BaseLayout from "@/layouts/base-layout.astro";
+import BaseLayout, { type LayoutProps } from "@/layouts/base-layout.astro";
 
-type Props = {
-  title?: string;
-  author?: string;
-  description?: string;
-};
+type Props = Omit<LayoutProps, "section">;
 
-const { title, author, description } = Astro.props;
+const { description } = Astro.props;
 
 const defaultDescription = "Hi there, I'm Aakash! Welcome to my portfolio!";
 const pageDescription = description || defaultDescription;
 ---
 
-<BaseLayout
-  section="Portfolio"
-  title={title}
-  author={author}
-  description={pageDescription}
->
+<BaseLayout section="Portfolio" description={pageDescription} {...Astro.props}>
   <HeaderPortfolio />
   <main class="container flex max-w-3xl grow flex-col gap-10">
     <slot />
