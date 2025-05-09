@@ -13,7 +13,11 @@ const { pathname } = Astro.url;
   <div class="container flex flex-row items-center justify-between">
     <div class="flex flex-row items-center gap-3 font-semibold sm:gap-1">
       <a href="/" class="flex flex-row items-center gap-3">
-        <Image src={profile} alt="Profile picture." class="size-7 rounded-md" />
+        <Image
+          src={profile}
+          alt="Aakash Kc's profile picture."
+          class="size-7 rounded-full"
+        />
         <span class="sr-only sm:not-sr-only">Aakash Kc</span>
       </a>
       <span class="sr-only sm:not-sr-only">/</span>
