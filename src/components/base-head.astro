@@ -1,17 +1,54 @@
 ---
-type Props = { title: string; author: string; description: string };
+import type { ImageMetadata } from "astro";
 
-const { title, author, description } = Astro.props;
+export type MetaProps = {
+  title: string;
+  author: string;
+  description: string;
+  image: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  type: "website" | "article";
+};
+
+type Props = MetaProps;
+
+const { title, author, description, image, type } = Astro.props;
+
+const canonicalURL = new URL(Astro.request.url, Astro.site);
+const canonical = canonicalURL.toString();
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
-<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="canonical" href={canonical} />
 
 <title>{title}</title>
 
 <meta name="title" content={title} />
 <meta name="author" content={author} />
 <meta name="description" content={description} />
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content={title} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="Aakash Kc" />
+<meta property="og:image" content={image.src.src} />
+<meta property="og:image:type" content={"image/" + image.src.format} />
+<meta property="og:image:width" content={image.src.width.toString()} />
+<meta property="og:image:height" content={image.src.height.toString()} />
+<meta property="og:image:alt" content={image.alt} />
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image.src.src} />
+<meta name="twitter:image:alt" content={image.alt} />

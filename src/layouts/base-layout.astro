@@ -1,6 +1,8 @@
 ---
-import BaseHead from "@/components/base-head.astro";
+import BaseHead, { type MetaProps } from "@/components/base-head.astro";
 import ThemeScript from "@/components/theme-script.astro";
+
+import banner from "@/assets/images/banner.png";
 
 import "@fontsource-variable/domine";
 import "@fontsource-variable/geist";
@@ -8,14 +10,13 @@ import "@fontsource-variable/geist-mono";
 
 import "@/styles/global.css";
 
-type Props = {
+export type LayoutProps = Partial<MetaProps> & {
   section?: string;
-  title?: string;
-  author?: string;
-  description?: string;
 };
 
-const { section, title, author, description } = Astro.props;
+type Props = LayoutProps;
+
+const { section, title, author, description, image, type } = Astro.props;
 
 const baseTitle = "Aakash Kc";
 const sectionTitle = section ? `${baseTitle} / ${section}` : baseTitle;
@@ -27,6 +28,12 @@ const pageAuthor = author || defaultAuthor;
 const defaultDescription =
   "Hi there, I'm Aakash! Welcome to my personal website!";
 const pageDescription = description || defaultDescription;
+
+const defaultImage = { src: banner, alt: "Aakash Kc banner." };
+const pageImage = image || defaultImage;
+
+const defaultType = "website";
+const pageType = type || defaultType;
 ---
 
 <!doctype html>
@@ -36,6 +43,8 @@ const pageDescription = description || defaultDescription;
       title={pageTitle}
       author={pageAuthor}
       description={pageDescription}
+      image={pageImage}
+      type={pageType}
     />
     <ThemeScript />
   </head>
