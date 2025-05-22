@@ -27,18 +27,18 @@ const { pathname } = Astro.url;
       <a
         href="/portfolio/projects"
         class={cn(
-          "p-2 transition-colors hover:text-primary",
+          "p-2 transition-colors hover:text-foreground",
           pathname.includes("/portfolio/projects")
-            ? "text-primary"
+            ? "text-foreground"
             : "text-muted-foreground"
         )}>Projects</a
       >
       <a
         href="/portfolio/tags"
         class={cn(
-          "p-2 transition-colors hover:text-primary",
+          "p-2 transition-colors hover:text-foreground",
           pathname.includes("/portfolio/tags")
-            ? "text-primary"
+            ? "text-foreground"
             : "text-muted-foreground"
         )}>Tags</a
       >
